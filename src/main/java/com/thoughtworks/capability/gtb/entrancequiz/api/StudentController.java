@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -17,7 +18,10 @@ public class StudentController {
 
   @GetMapping("/students")
   @CrossOrigin(origins = "http://localhost:1234")
-  public ResponseEntity<List<Student>> getStudentsList(){
-    return ResponseEntity.ok().body(studentService.getStudentsList());
+  public List<Student> getStudentsList(){
+    List<Student> studentList = new ArrayList<Student>();
+    studentList = studentService.getStudentsList();
+    // return ResponseEntity.ok().body(studentList);
+    return studentList;
   }
 }
