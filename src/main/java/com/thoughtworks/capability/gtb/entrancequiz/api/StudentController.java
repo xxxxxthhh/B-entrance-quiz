@@ -1,6 +1,7 @@
 package com.thoughtworks.capability.gtb.entrancequiz.api;
 
 import com.thoughtworks.capability.gtb.entrancequiz.dto.Student;
+import com.thoughtworks.capability.gtb.entrancequiz.dto.Team;
 import com.thoughtworks.capability.gtb.entrancequiz.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,5 +24,13 @@ public class StudentController {
     studentList = studentService.getStudentsList();
     // return ResponseEntity.ok().body(studentList);
     return studentList;
+  }
+
+  @GetMapping("/teams")
+  @CrossOrigin(origins = "http://localhost:1234")
+  public List<Team> getTeamsList(){
+    List<Team> teamList = new ArrayList<Team>();
+    teamList = studentService.getTeamsList();
+    return teamList;
   }
 }

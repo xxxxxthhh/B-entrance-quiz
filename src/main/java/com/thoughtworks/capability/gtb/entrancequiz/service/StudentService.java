@@ -1,6 +1,8 @@
 package com.thoughtworks.capability.gtb.entrancequiz.service;
 
+import com.sun.javafx.text.TextLine;
 import com.thoughtworks.capability.gtb.entrancequiz.dto.Student;
+import com.thoughtworks.capability.gtb.entrancequiz.dto.Team;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -11,6 +13,10 @@ public class StudentService {
   public List<Student> getStudentsList(){
     List<Student> studentList = builtStuList();
     return studentList;
+  }
+
+  public List<Team> getTeamsList(){
+    return null;
   }
 
   private List<Student> builtStuList() {
