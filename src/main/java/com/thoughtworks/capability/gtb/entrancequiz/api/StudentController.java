@@ -14,6 +14,8 @@ import java.util.List;
 
 @RestController
 public class StudentController {
+  // TODO GTB-知识点: - 建议使用构造方法注入bean，并声明为final
+  // TODO GTB-工程实践: - 建议使用private，遵循最小访问原则
   @Autowired
   StudentService studentService;
 
@@ -22,6 +24,7 @@ public class StudentController {
   public List<Student> getStudentsList(){
     List<Student> studentList = new ArrayList<Student>();
     studentList = studentService.getStudentsList();
+    // TODO GTB-工程实践: - 及时清理无用代码
     // return ResponseEntity.ok().body(studentList);
     return studentList;
   }
